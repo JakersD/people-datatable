@@ -1,5 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { DatatablePage } from '../pages/datatable';
+import { DatatablePage } from '../pages/data-table';
 
 const router = () =>
   createBrowserRouter([

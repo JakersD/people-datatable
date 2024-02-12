@@ -4,6 +4,8 @@ import { RouterProvider } from 'react-router-dom';
 import appRouter from './router';
 
 import './styles/index.scss';
+import './locales-config';
+
 import { setupStore } from './store';
 
 const root = document.getElementById('root') as HTMLElement;

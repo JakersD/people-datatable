@@ -2,7 +2,7 @@
   "name": "people-datatable",
   "version": "0.1.0",
   "license": "MIT",
-  "author": "Ilya Cherkasov<ilyac.cherkasov@gmail.com>",
+  "author": "Ilya Cherkasov <ilyac.cherkasov@gmail.com>",
   "private": true,
   "scripts": {
     "start": "react-scripts start",

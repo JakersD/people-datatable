@@ -1,11 +1,11 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { DatatablePage } from '../pages/data-table';
+import { Main } from '../pages/data-table';
 
 const router = () =>
   createBrowserRouter([
     {
       path: '/',
-      element: <DatatablePage />,
+      element: <Main />,
     },
   ]);
 

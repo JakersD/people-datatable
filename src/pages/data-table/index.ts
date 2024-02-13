@@ -1,1 +1,1 @@
-export { DatatablePage } from './ui/data-table';
+export { Main } from './main';

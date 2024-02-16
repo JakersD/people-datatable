@@ -1,0 +1,47 @@
+.wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+
+  .employee {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+  .avatar {
+    margin-right: 16px;
+    width: 72px;
+    height: 72px;
+
+    img {
+      width: inherit;
+      object-fit: cover;
+      border-radius: 1100%;
+    }
+  }
+
+  .info {
+    .firstName {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 20px;
+      color: #050510;
+      margin-bottom: 4px;
+
+      span {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 18px;
+        margin-left: 4px;
+        color: #97979b;
+      }
+    }
+
+    .department {
+      font-size: 13px;
+      line-height: 16px;
+      color: #55555c;
+    }
+  }
+}

@@ -1,12 +1,12 @@
 import React from 'react';
-import { ETabsTag } from '../models';
+import { EDepartment } from '@/shared/models';
 import styles from './tab.module.scss';
 
 interface IProps {
   label: string;
-  tag: ETabsTag;
+  tag: EDepartment;
   isActive?: boolean;
-  setActiveTab: (tag: ETabsTag) => void;
+  setActiveTab: (tag: EDepartment) => void;
 }
 
 export const Tab: React.FC<IProps> = ({ label, tag, isActive, setActiveTab }) => {

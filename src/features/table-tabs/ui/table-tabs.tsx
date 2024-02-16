@@ -1,52 +1,37 @@
 import React, { useState } from 'react';
 import { Tab } from './tab';
-import { ETabsTag } from '../models';
+import { EDepartment } from '@/shared/models';
 import styles from './table-tabs.module.scss';
+import { useAppSelector } from '@/shared/lib';
+import { t } from 'i18next';
+import { core } from '@/shared/i18n/ru/core';
+import { getDepartments } from '../utils/tab';
 
 export const Tabs: React.FC = () => {
-  const [activeTab, setActiveTab] = useState(ETabsTag.all);
+  const [activeTab, setActiveTab] = useState(EDepartment.all);
 
-  const handleSetActiveTab = (tag: ETabsTag) => setActiveTab(tag);
+  const employee = useAppSelector((state) => state.employeeTable.data);
+
+  const handleSetActiveTab = (tag: EDepartment) => setActiveTab(tag);
 
   return (
     <div className={styles.outerWrapper}>
       <div className={styles.innerWrapper}>
         <Tab
           setActiveTab={handleSetActiveTab}
-          label='Все'
-          tag={ETabsTag.all}
-          isActive={activeTab === ETabsTag.all}
+          label={t(core.table.department[EDepartment.all])}
+          tag={EDepartment.all}
+          isActive={activeTab === EDepartment.all}
         />
-        <Tab
-          setActiveTab={handleSetActiveTab}
-          label='Designers'
-          tag={ETabsTag.designers}
-          isActive={activeTab === ETabsTag.designers}
-        />
-        <Tab
-          setActiveTab={handleSetActiveTab}
-          label='Analysts'
-          tag={ETabsTag.analytics}
-          isActive={activeTab === ETabsTag.analytics}
-        />
-        <Tab
-          setActiveTab={handleSetActiveTab}
-          label='Managers'
-          tag={ETabsTag.management}
-          isActive={activeTab === ETabsTag.management}
-        />
-        <Tab
-          setActiveTab={handleSetActiveTab}
-          label='IOS'
-          tag={ETabsTag.ios}
-          isActive={activeTab === ETabsTag.ios}
-        />
-        <Tab
-          setActiveTab={handleSetActiveTab}
-          label='Android'
-          tag={ETabsTag.android}
-          isActive={activeTab === ETabsTag.android}
-        />
+        {getDepartments(employee)?.map((v) => (
+          <Tab
+            key={v}
+            label={t(core.table.department[v])}
+            tag={v}
+            isActive={activeTab === v}
+            setActiveTab={handleSetActiveTab}
+          />
+        ))}
       </div>
     </div>
   );

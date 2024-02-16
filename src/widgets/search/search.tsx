@@ -8,10 +8,10 @@ import { Gap } from '@/shared/ui';
 
 export const Search: React.FC = () => {
   return (
-    <>
+    <div className={styles.wrapper}>
       <Gap size={8} />
       <h1 className={styles.title}>{t(core.search.title)}</h1>
       <SearchInput />
-    </>
+    </div>
   );
 };

@@ -1,0 +1,17 @@
+.tab {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  color: #97979b;
+  background-color: inherit;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+
+  &.tabActive {
+    font-weight: 600;
+    color: #050510;
+    border-bottom: 2px solid #6534ff;
+  }
+}

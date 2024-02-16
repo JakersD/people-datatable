@@ -5,6 +5,7 @@
   padding: 8px 12px;
   display: flex;
   align-items: center;
+  cursor: pointer;
   position: relative;
 }
 
@@ -22,4 +23,10 @@
   &::placeholder {
     color: #c3c3c6;
   }
+}
+
+.sortBtn {
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
 }

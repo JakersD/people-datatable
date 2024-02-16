@@ -1,0 +1,32 @@
+.inputWrapper {
+  border-radius: 16px;
+  background-color: #f7f7f8;
+  margin-bottom: 14px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.input {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 20px;
+  outline: none;
+  border: none;
+  background-color: #f7f7f8;
+  padding: 0 8px;
+  width: 100%;
+  caret-color: #6534ff;
+
+  &::placeholder {
+    color: #c3c3c6;
+  }
+}
+
+.sortBtn {
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+}

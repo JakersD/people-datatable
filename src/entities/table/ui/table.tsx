@@ -5,9 +5,10 @@ import styles from './table.module.scss';
 import { IEmployee } from '@/shared/models';
 import { t } from 'i18next';
 import { core } from '@/shared/i18n/ru/core';
+import { getDataToShow } from '../utils/table';
 
 export const Table: React.FC = () => {
-  const { data } = useAppSelector((state) => state.employeeTable);
+  const { data, filteredData } = useAppSelector((state) => state.employeeTable);
 
   const dispatch = useAppDispatch();
 
@@ -19,7 +20,7 @@ export const Table: React.FC = () => {
 
   return (
     <div className={styles.wrapper}>
-      {data.map((employee) => (
+      {getDataToShow(data, filteredData).map((employee) => (
         <div className={styles.employee} key={employee.id}>
           <div className={styles.avatar}>
             <img src={employee.avatarUrl} alt='Сотрудник' />

@@ -2,17 +2,23 @@ import React, { useState } from 'react';
 import { Tab } from './tab';
 import { EDepartment } from '@/shared/models';
 import styles from './table-tabs.module.scss';
-import { useAppSelector } from '@/shared/lib';
+import { useAppDispatch, useAppSelector } from '@/shared/lib';
 import { t } from 'i18next';
 import { core } from '@/shared/i18n/ru/core';
 import { getDepartments } from '../utils/tab';
+import { setActiveTabAction } from '../actions/tab-action';
 
 export const Tabs: React.FC = () => {
   const [activeTab, setActiveTab] = useState(EDepartment.all);
 
+  const dispatch = useAppDispatch();
+
   const employee = useAppSelector((state) => state.employeeTable.data);
 
-  const handleSetActiveTab = (tag: EDepartment) => setActiveTab(tag);
+  const handleSetActiveTab = (tag: EDepartment) => {
+    setActiveTab(tag);
+    dispatch(setActiveTabAction(tag));
+  };
 
   return (
     <div className={styles.outerWrapper}>

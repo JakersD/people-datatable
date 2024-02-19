@@ -1,6 +1,7 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { IEmployeeState } from '../models/employee';
 import { fetchEmployees } from './employee-action';
+import { IEmployee } from '@/shared/models';
 
 const initialState: IEmployeeState = {
   data: [],
@@ -11,7 +12,14 @@ const initialState: IEmployeeState = {
 export const employeeTableSlice = createSlice({
   initialState,
   name: 'employeeTable',
-  reducers: {},
+  reducers: {
+    setActiveTab(state, action: PayloadAction<IEmployee[] | undefined>) {
+      return {
+        ...state,
+        filteredData: action.payload,
+      };
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchEmployees.pending, (state) => {
       state.isLoading = true;

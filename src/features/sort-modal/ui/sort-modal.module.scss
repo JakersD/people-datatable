@@ -1,0 +1,49 @@
+// body {
+//   overflow-y: hidden;
+// }
+
+.modalWrapper {
+  background-color: #05051029;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 8px 16px;
+  width: 373px;
+}
+
+.titleBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 16px 0 32px 0;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #050510;
+  margin-left: auto;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border: none;
+  border-radius: 100%;
+  margin-left: auto;
+  background-color: #f7f7f8;
+  cursor: pointer;
+}

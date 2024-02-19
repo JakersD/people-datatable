@@ -2,9 +2,13 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { IEmployeeState } from '../models/employee';
 import { fetchEmployees } from './employee-action';
 import { IEmployee } from '@/shared/models';
+import { ESort } from '@/features/sort-modal/model/sort';
 
 const initialState: IEmployeeState = {
   data: [],
+  filter: {
+    sort: ESort.default,
+  },
   isLoading: false,
   isError: false,
 };
@@ -17,6 +21,15 @@ export const employeeTableSlice = createSlice({
       return {
         ...state,
         filteredData: action.payload,
+      };
+    },
+    setActiveSort(state, action: PayloadAction<ESort>) {
+      return {
+        ...state,
+        filter: {
+          ...state.filter,
+          sort: action.payload,
+        },
       };
     },
   },

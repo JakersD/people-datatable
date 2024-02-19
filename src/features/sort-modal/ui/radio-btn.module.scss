@@ -1,0 +1,25 @@
+.radioWrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+  cursor: pointer;
+}
+
+.radio {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #6534ff;
+  border-radius: 25px;
+  margin-right: 14px;
+}
+
+.radioActive {
+  border-width: 8px;
+}
+
+.text {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #050510;
+}

@@ -4,6 +4,12 @@ export const core = {
   search: {
     title: 'Поиск',
     placeholder: 'Введите имя, тег, почту...',
+    sorting: {
+      title: 'Сортировка',
+      by_default: 'По умолчанию',
+      by_words: 'По алфавиту',
+      by_birthday: 'По дню рождения',
+    },
   },
   table: {
     department: {

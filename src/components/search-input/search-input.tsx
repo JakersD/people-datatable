@@ -1,10 +1,12 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from './search-input.module.scss';
 import { t } from 'i18next';
 import { searchActiveImg, searchDropdownImg, searchImg } from '@/assets';
 import { core } from '@/_data/i18n/ru/core';
 import { SortModal } from '../sort-modal/sort-modal';
 import { useModal } from '@/_data/hooks/useModal';
+import { useAppDispatch, useFirstRender } from '@/_data/hooks';
+import { setSearch } from '@/_data/store/slice/employee-action';
 
 export const SearchInput: React.FC = () => {
   const [active, setActive] = useState(false);
@@ -12,6 +14,14 @@ export const SearchInput: React.FC = () => {
   const inputRef = useRef<any>(null);
 
   const [isOpen, toggleModal] = useModal();
+  const isFirstRender = useFirstRender();
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    if (!isFirstRender) {
+      dispatch(setSearch(value));
+    }
+  }, [value]);
 
   const handleChangeFocus = () => setActive(!active);
   const handleFocus = () => inputRef.current.focus();

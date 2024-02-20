@@ -7,7 +7,7 @@ export const core = {
     sorting: {
       title: 'Сортировка',
       by_default: 'По умолчанию',
-      by_words: 'По алфавиту',
+      by_firstName: 'По алфавиту',
       by_birthday: 'По дню рождения',
     },
   },

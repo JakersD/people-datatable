@@ -2,6 +2,7 @@ export interface IEmployeeState {
   data: IEmployee[];
   filter: {
     sort: ESort;
+    search: string;
     activeTab: EDepartment;
   };
   filteredData?: IEmployee[];
@@ -39,6 +40,6 @@ export enum EDepartment {
 
 export enum ESort {
   default = 'default',
-  words = 'words',
+  firstName = 'firstName',
   birthday = 'birthday',
 }

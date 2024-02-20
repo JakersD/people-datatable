@@ -1,10 +1,11 @@
-import { EDepartment, ESort, IEmployeeState } from '@/_data/models/employee';
+import { EDepartment, ESort, IEmployee, IEmployeeState } from '@/_data/models/employee';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { fetchEmployees } from './employee-action';
 
 const initialState: IEmployeeState = {
   data: [],
   filter: {
+    search: '',
     sort: ESort.default,
     activeTab: EDepartment.all,
   },
@@ -25,6 +26,15 @@ export const employeeSlice = createSlice({
         },
       };
     },
+    setSearch(state, action: PayloadAction<string>) {
+      return {
+        ...state,
+        filter: {
+          ...state.filter,
+          search: action.payload,
+        },
+      };
+    },
     setSorting(state, action: PayloadAction<ESort>) {
       return {
         ...state,
@@ -32,6 +42,12 @@ export const employeeSlice = createSlice({
           ...state.filter,
           sort: action.payload,
         },
+      };
+    },
+    filteredData(state, action: PayloadAction<IEmployee[] | undefined>) {
+      return {
+        ...state,
+        filteredData: action.payload,
       };
     },
   },

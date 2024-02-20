@@ -8,8 +8,8 @@ export const getSortItems = () => [
     sort: ESort.default,
   },
   {
-    text: t(core.search.sorting.by_words),
-    sort: ESort.words,
+    text: t(core.search.sorting.by_firstName),
+    sort: ESort.firstName,
   },
   {
     text: t(core.search.sorting.by_birthday),

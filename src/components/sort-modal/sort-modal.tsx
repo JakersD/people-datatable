@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import styles from './sort-modal.module.scss';
 import { t } from 'i18next';
@@ -21,6 +21,14 @@ export const SortModal: React.FC<IProps> = ({ isOpen, toggleModal }) => {
   const activeSort = useAppSelector((state) => state.employee.filter.sort);
 
   const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isOpen]);
 
   const handleSetSorting = (sort: ESort) => {
     if (sort !== activeSort) {

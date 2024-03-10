@@ -27,6 +27,7 @@ export const SearchInput: React.FC = () => {
   const handleFocus = () => inputRef.current.focus();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => setValue(e.target.value);
+  const handleInputClick = (e: React.MouseEvent<HTMLInputElement>) => e.stopPropagation();
   const handleSortingClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     toggleModal();
@@ -41,7 +42,7 @@ export const SearchInput: React.FC = () => {
           className={styles.input}
           placeholder={active ? '' : t(core.search.placeholder)}
           value={value}
-          onClick={(e) => e.stopPropagation()}
+          onClick={handleInputClick}
           onChange={handleInputChange}
           onFocus={handleChangeFocus}
           onBlur={handleChangeFocus}
